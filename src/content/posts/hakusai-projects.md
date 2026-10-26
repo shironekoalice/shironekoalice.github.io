@@ -42,8 +42,8 @@ HakusAgent（HakusAI 2.0）是项目群的核心——一个本地优先的 AI �
 
 ## 周边小项目
 
-- **hakus-hybrid**：一个 ~5.6M 参数的混合架构小模型实验（attention + persistent state + learnable gate），用来验证持久状态能在注意力窗口外携带信息——实验里 d=24 的配置窗外回忆得分 0.422，Transformer 基线只有 0.005，因果证据挺漂亮的
-- **hakusaibot**：早期的 NoneBot2 QQ 机器人原型，带 LTMGraph 长期记忆图——整个项目群的起点
+- **hakus-hybrid**：一个小模型混合架构实验（attention + persistent state + learnable gate，主配置约 5.6M 参数，消融实验用 3.7M 配置），用来验证持久状态能在注意力窗口外携带信息——实验里 d=24 的配置窗外回忆得分 0.422，Transformer 基线只有 0.005，因果证据挺漂亮的
+- **hakusaibot**：早期的 NoneBot2 QQ 机器人原型，整个项目群的起点（长期记忆图 LTMGraph 是同期的独立实验，因算力消耗过大已弃用，未集成进机器人）
 - **live2dControl**：PSD 分层解析 → 自动深度合成 → 口型区域检测，Live2D 模型自动化制作工具箱
 
 ## 现状与计划

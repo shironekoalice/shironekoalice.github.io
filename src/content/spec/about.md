@@ -12,8 +12,8 @@
 
 ## 我的项目
 
-- [Loftey](https://github.com/modemneko/loftey) —— 235M MoE 语言模型
-- [Jaume](https://github.com/modemneko/Jaume) —— 面向 Agent 的句子嵌入模型系列
+- [Loftey](https://github.com/shironekoalice/Loftey) —— 235M MoE 语言模型
+- [Jaume](https://github.com/shironekoalice/Jaume) —— 面向 Agent 的句子嵌入模型系列
 - HakusAI —— AI 伴侣项目群（介绍见博客文章）
 
 ## 联系方式

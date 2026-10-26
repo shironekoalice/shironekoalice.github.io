@@ -273,7 +273,7 @@ class DecoderLayer(nn.Module):
 
 ### 训练过程
 
-（训练过程图请参考公众号原文，或后续补充到博客）
+训练 loss 曲线和 TensorBoard 记录同步在 ModelScope 仓库的 `logs/` 目录下。
 
 ### 效果
 
@@ -294,7 +294,7 @@ class DecoderLayer(nn.Module):
 ### 安装
 
 ```bash
-git clone https://github.com/shironekoalice/loftey.git
+git clone https://github.com/shironekoalice/Loftey.git
 cd loftey
 pip install -r requirements.txt
 ```
@@ -339,7 +339,7 @@ print(response)
 
 ## 开源地址
 
-- GitHub: https://github.com/modemneko/loftey
+- GitHub: https://github.com/shironekoalice/Loftey
 - ModelScope: https://www.modelscope.cn/models/LightNeko/loftey-mini-235m
 - HuggingFace: https://huggingface.co/Zeppesey/loftey-mini-235m
 

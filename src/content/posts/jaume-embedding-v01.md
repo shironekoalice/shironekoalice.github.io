@@ -71,7 +71,7 @@ Jaume（玖沫）是我做的一个轻量级、面向 Agent 的模型系列。�
 - 700M 规模视 350M 实验结论再启动
 - Score 头补排序损失（当前 Pearson 0.29 还太弱）
 
-权重、日志、报告都在 ModelScope：[LightNeko/Jaume](https://www.modelscope.cn/models/LightNeko/Jaume)，代码镜像在 [GitHub](https://github.com/modemneko/Jaume)。相关文档（ModelScope 直链，点击即下载/打开）：
+权重、日志、报告都在 ModelScope：[LightNeko/Jaume](https://www.modelscope.cn/models/LightNeko/Jaume)，代码镜像在 [GitHub](https://github.com/shironekoalice/Jaume)。相关文档（ModelScope 直链，点击即下载/打开）：
 
 - 技术报告（中文）：[docs/memory-report.md](https://www.modelscope.cn/models/LightNeko/Jaume/resolve/master/docs/memory-report.md)
 - 技术报告（英文）：[docs/memory-report.en.md](https://www.modelscope.cn/models/LightNeko/Jaume/resolve/master/docs/memory-report.en.md)
