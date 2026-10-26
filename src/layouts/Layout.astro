@@ -18,6 +18,7 @@ import {
 import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
+import { initRandomBanner } from "../scripts/random-banner";
 import "katex/dist/katex.css";
 
 interface Props {
@@ -368,6 +369,7 @@ function init() {
 	loadTheme();
 	loadHue();
 	initCustomScrollbar();
+	if (siteConfig.banner.enable) initRandomBanner();
 	showBanner();
 }
 
@@ -432,6 +434,7 @@ const setup = () => {
 		if (heightExtend) {
 			heightExtend.classList.remove('hidden')
 		}
+		if (siteConfig.banner.enable) initRandomBanner();
 	});
 	window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
 		setTimeout(() => {
