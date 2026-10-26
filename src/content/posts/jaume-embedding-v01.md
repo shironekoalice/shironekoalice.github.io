@@ -62,7 +62,7 @@ Jaume（玖沫）是我做的一个轻量级、面向 Agent 的模型系列。�
 - JM-R 携带状态 vs 静态：5/5 次运行为负
 - 四阶段诊断显示：输出从不读取携带状态、加性更新稀释新输入（相对变化 0.318→0.098）、门控退化成常数
 
-完整的诊断过程写成了技术报告，论文形式的 PDF 可以在线阅读：**[Why a Finite-Capacity Neural Memory Does Not Help（Jaume-Memory Technical Report）](https://www.modelscope.cn/models/LightNeko/Jaume/file-view/fileView?id=docs%2Fpaper%2FJaume-Memory-Technical-Report.pdf)**。负结果也是结果——它至少证明了这个设计在这个规模下不值得继续烧卡。
+完整的诊断过程写成了技术报告，论文形式的 PDF 可以直接打开：**[Why a Finite-Capacity Neural Memory Does Not Help（Jaume-Memory Technical Report）](https://www.modelscope.cn/models/LightNeko/Jaume/resolve/master/docs/paper/Jaume-Memory-Technical-Report.pdf)**。负结果也是结果——它至少证明了这个设计在这个规模下不值得继续烧卡。
 
 ## 后续计划
 
@@ -71,10 +71,10 @@ Jaume（玖沫）是我做的一个轻量级、面向 Agent 的模型系列。�
 - 700M 规模视 350M 实验结论再启动
 - Score 头补排序损失（当前 Pearson 0.29 还太弱）
 
-权重、日志、报告都在 ModelScope：[LightNeko/Jaume](https://www.modelscope.cn/models/LightNeko/Jaume)，代码镜像在 [GitHub](https://github.com/modemneko/Jaume)。相关文档：
+权重、日志、报告都在 ModelScope：[LightNeko/Jaume](https://www.modelscope.cn/models/LightNeko/Jaume)，代码镜像在 [GitHub](https://github.com/modemneko/Jaume)。相关文档（ModelScope 直链，点击即下载/打开）：
 
-- 技术报告（中文）：[docs/memory-report.md](https://www.modelscope.cn/models/LightNeko/Jaume/file-view/fileView?id=docs%2Fmemory-report.md)
-- 技术报告（英文）：[docs/memory-report.en.md](https://www.modelscope.cn/models/LightNeko/Jaume/file-view/fileView?id=docs%2Fmemory-report.en.md)
-- 论文 PDF：[Jaume-Memory-Technical-Report.pdf](https://www.modelscope.cn/models/LightNeko/Jaume/file-view/fileView?id=docs%2Fpaper%2FJaume-Memory-Technical-Report.pdf)
+- 技术报告（中文）：[docs/memory-report.md](https://www.modelscope.cn/models/LightNeko/Jaume/resolve/master/docs/memory-report.md)
+- 技术报告（英文）：[docs/memory-report.en.md](https://www.modelscope.cn/models/LightNeko/Jaume/resolve/master/docs/memory-report.en.md)
+- 论文 PDF：[Jaume-Memory-Technical-Report.pdf](https://www.modelscope.cn/models/LightNeko/Jaume/resolve/master/docs/paper/Jaume-Memory-Technical-Report.pdf)（853 KB）
 
 > 这是第一版发布，文中指标可能随 holdout 复核更新，有建议欢迎交流。
