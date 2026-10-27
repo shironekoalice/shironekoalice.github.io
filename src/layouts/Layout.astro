@@ -18,7 +18,6 @@ import {
 import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
-import { initRandomBanner } from "../scripts/random-banner";
 import "katex/dist/katex.css";
 
 interface Props {
@@ -362,7 +361,17 @@ function showBanner() {
 		return;
 	}
 
-	banner.classList.remove('opacity-0', 'scale-105');
+	const reveal = () => banner.classList.remove('opacity-0', 'scale-105');
+	const img = banner.querySelector('img') as HTMLImageElement | null;
+
+	// Wait for the banner image itself: revealing before the image is decoded
+	// shows an empty banner and reads as a flash.
+	if (img && !img.complete) {
+		img.addEventListener('load', reveal, { once: true });
+		img.addEventListener('error', reveal, { once: true });
+		return;
+	}
+	reveal();
 }
 
 function init() {
@@ -435,7 +444,10 @@ const setup = () => {
 		if (heightExtend) {
 			heightExtend.classList.remove('hidden')
 		}
-		if (siteConfig.banner.enable) initRandomBanner();
+		if (siteConfig.banner.enable) {
+			initRandomBanner();
+			showBanner();
+		}
 	});
 	window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
 		setTimeout(() => {

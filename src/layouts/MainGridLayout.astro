@@ -53,11 +53,34 @@ const mainPanelTop = siteConfig.banner.enable
 
 <!-- Banner -->
 {siteConfig.banner.enable && <div id="banner-wrapper" class={`absolute z-10 w-full transition duration-700 overflow-hidden`} style={`top: -${BANNER_HEIGHT_EXTEND}vh`}>
-    <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105"]}
-                  src={siteConfig.banner.src} position={siteConfig.banner.position}
-    >
-    </ImageWrapper>
+    <div id="banner" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105 overflow-hidden relative"]}>
+        <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>
+        <img data-random-banner alt="Banner image of the blog" class="w-full h-full object-cover" style={`object-position: ${siteConfig.banner.position}`} />
+    </div>
 </div>}
+<script is:inline>
+    // Set the banner source synchronously during parsing so the element never
+    // renders the configured static image first (which caused a visible flash).
+    (function () {
+        var img = document.querySelector('#banner img[data-random-banner]');
+        if (!img) return;
+        var KEY = 'random-banner-url';
+        var PRIMARY = 'https://t.alcy.cc/ycy';
+        var FALLBACK = 'https://picsum.photos/1920/1080';
+        var seed = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+        var url = null;
+        try { url = sessionStorage.getItem(KEY); } catch (e) { /* private mode */ }
+        if (!url) {
+            url = PRIMARY + '?' + seed;
+            try { sessionStorage.setItem(KEY, url); } catch (e) { /* ignore */ }
+        }
+        img.addEventListener('error', function () {
+            img.src = FALLBACK + '?' + seed;
+        }, { once: true });
+        img.src = url;
+    })();
+</script>
+
 
 <!-- Main content -->
 <div class="absolute w-full z-30 pointer-events-none" style={`top: ${mainPanelTop}`}>
